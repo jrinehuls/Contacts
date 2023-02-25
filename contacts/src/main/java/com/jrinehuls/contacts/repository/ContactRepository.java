@@ -12,11 +12,9 @@ import com.jrinehuls.contacts.model.Contact;
 @Repository
 public class ContactRepository {
     
-    private List<Contact> contacts = Arrays.asList(
-            new Contact("1", "Justin", "330-831-5391")
-    );
+    private ArrayList<Contact> contacts = new ArrayList<>();
 
-    public List<Contact> getContacts() {
+    public ArrayList<Contact> getContacts() {
         return contacts;
     }
 

@@ -1,7 +1,9 @@
 package com.jrinehuls.contacts.service;
 
+import java.util.ArrayList;
 import java.util.stream.IntStream;
 
+import com.jrinehuls.contacts.exception.ResourceNotFoundException;
 import com.jrinehuls.contacts.model.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,10 +17,32 @@ public class ContactServiceImpl implements ContactService {
     private ContactRepository contactRepository;
 
     @Override
+    public ArrayList<Contact> getAllContacts() {
+        return contactRepository.getContacts();
+    }
+
+    @Override
     public Contact getContactById(String id) {
         return contactRepository.getContact(findIndexById(id));
     }
-    
+
+    @Override
+    public void saveContact(Contact contact) {
+        contactRepository.saveContact(contact);
+    }
+
+    @Override
+    public void updateContact(String id, Contact contact) {
+        int index = findIndexById(id);
+        contactRepository.updateContact(index, contact);
+    }
+
+    @Override
+    public void deleteContact(String id) {
+        int index = findIndexById(id);
+        contactRepository.deleteContact(index);
+    }
+
 
     private int findIndexById(String id) {
         for (int i = 0; i < contactRepository.getContacts().size(); i++) {
@@ -26,7 +50,7 @@ public class ContactServiceImpl implements ContactService {
                 return i;
             }
         }
-        throw new RuntimeException("Not Found");
+        throw new ResourceNotFoundException(id);
     }
 
 /*

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ContactsApplication {
 
-	// LESSON 158
+	// First Workbook
 	public static void main(String[] args) {
 		SpringApplication.run(ContactsApplication.class, args);
 	}
