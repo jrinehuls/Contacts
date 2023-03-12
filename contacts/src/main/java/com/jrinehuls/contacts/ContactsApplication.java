@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ContactsApplication {
 
-	// First Workbook
+	// Section 20 OpenAPI Documentation
 	public static void main(String[] args) {
 		SpringApplication.run(ContactsApplication.class, args);
 	}
