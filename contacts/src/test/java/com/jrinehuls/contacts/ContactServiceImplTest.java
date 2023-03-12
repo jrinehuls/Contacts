@@ -3,7 +3,6 @@ package com.jrinehuls.contacts;
 
 import com.jrinehuls.contacts.model.Contact;
 import com.jrinehuls.contacts.repository.ContactRepository;
-import com.jrinehuls.contacts.service.ContactService;
 import com.jrinehuls.contacts.service.impl.ContactServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

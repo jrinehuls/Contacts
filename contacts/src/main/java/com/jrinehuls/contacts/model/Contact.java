@@ -27,6 +27,13 @@ public class Contact {
         this.age = age;
     }
 
+    public Contact(String firstName, String lastName, int age) {
+        this.id = UUID.randomUUID().toString();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
 
     public Contact() {
         this.id = UUID.randomUUID().toString();
